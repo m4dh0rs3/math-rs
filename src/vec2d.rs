@@ -2,8 +2,8 @@ use crate::func::{bezier, lerp};
 
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub struct Vec2D {
-    x: f64,
-    y: f64,
+    pub x: f64,
+    pub y: f64,
 }
 
 impl Vec2D {
