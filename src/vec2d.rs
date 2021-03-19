@@ -23,3 +23,12 @@ impl From<Vec2D<u8>> for Vec2D<f64> {
         }
     }
 }
+
+impl From<Vec2D<f64>> for Vec2D<u8> {
+    fn from(vec_2d: Vec2D<f64>) -> Self {
+        Self {
+            x: vec_2d.x.round() as u8,
+            y: vec_2d.y.round() as u8,
+        }
+    }
+}
