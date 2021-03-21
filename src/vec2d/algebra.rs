@@ -12,10 +12,28 @@ impl<T: ops::Add<Output = T>> ops::Add for Vec2D<T> {
     }
 }
 
+impl<T: ops::Add<Output = T> + Copy> ops::Add<T> for Vec2D<T> {
+    type Output = Self;
+
+    fn add(self, rhs: T) -> Self::Output {
+        Self {
+            x: self.x + rhs,
+            y: self.y + rhs,
+        }
+    }
+}
+
 impl<T: ops::AddAssign> ops::AddAssign for Vec2D<T> {
     fn add_assign(&mut self, rhs: Self) {
         self.x += rhs.x;
         self.y += rhs.y;
+    }
+}
+
+impl<T: ops::AddAssign + Copy> ops::AddAssign<T> for Vec2D<T> {
+    fn add_assign(&mut self, rhs: T) {
+        self.x += rhs;
+        self.y += rhs;
     }
 }
 
@@ -30,10 +48,28 @@ impl<T: ops::Sub<Output = T>> ops::Sub for Vec2D<T> {
     }
 }
 
+impl<T: ops::Sub<Output = T> + Copy> ops::Sub<T> for Vec2D<T> {
+    type Output = Self;
+
+    fn sub(self, rhs: T) -> Self::Output {
+        Self {
+            x: self.x - rhs,
+            y: self.y - rhs,
+        }
+    }
+}
+
 impl<T: ops::SubAssign> ops::SubAssign for Vec2D<T> {
     fn sub_assign(&mut self, rhs: Self) {
         self.x -= rhs.x;
         self.y -= rhs.y;
+    }
+}
+
+impl<T: ops::SubAssign + Copy> ops::SubAssign<T> for Vec2D<T> {
+    fn sub_assign(&mut self, rhs: T) {
+        self.x -= rhs;
+        self.y -= rhs;
     }
 }
 
