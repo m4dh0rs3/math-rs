@@ -1,6 +1,8 @@
 [package]
 name = "math"
+description = "Common mathematical objects and operations."
 version = "0.1.0"
+license = "GPL-3.0-only"
 authors = ["m4dh0rs3 <schoeps.benedikt@gmail.com>"]
 edition = "2018"
 

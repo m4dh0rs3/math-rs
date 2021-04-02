@@ -1,6 +1,10 @@
+mod angle;
+mod bezier;
 mod vec2d;
 
-pub use vec2d::bezier::*;
-pub use vec2d::Vec2D;
+pub mod prelude {
+    pub use crate::{angle::*, bezier::*, vec2d::Vec2D};
+}
+
 #[cfg(test)]
 mod tests;

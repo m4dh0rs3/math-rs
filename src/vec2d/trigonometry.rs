@@ -11,11 +11,13 @@ macro_rules! trig {
                 (self.x.powi(2) + self.y.powi(2)).sqrt()
             }
 
-            pub fn norm(&mut self) {
+            pub fn normal(&mut self) -> Self {
                 let maq = self.maq();
 
-                self.x /= maq;
-                self.y /= maq;
+                Self {
+                    x: self.x / maq,
+                    y: self.y / maq,
+                }
             }
 
             pub fn round(&self) -> Self {

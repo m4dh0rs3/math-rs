@@ -1,8 +1,10 @@
-pub(crate) mod algebra;
-pub(crate) mod bezier;
-pub(crate) mod intersect;
-pub(crate) mod trigonometry;
+mod algebra;
+mod bezier;
+mod convert;
+mod intersect;
+mod trigonometry;
 
+/// 2-Dimensional vector containing [`T`] on x and y.
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub struct Vec2D<T> {
     pub x: T,
@@ -10,25 +12,8 @@ pub struct Vec2D<T> {
 }
 
 impl<T> Vec2D<T> {
+    /// Create a new [`Vec2D`].
     pub fn new(x: T, y: T) -> Self {
         Self { x, y }
-    }
-}
-
-impl From<Vec2D<i8>> for Vec2D<f64> {
-    fn from(vec_2d: Vec2D<i8>) -> Self {
-        Self {
-            x: vec_2d.x.into(),
-            y: vec_2d.y.into(),
-        }
-    }
-}
-
-impl From<Vec2D<f64>> for Vec2D<i8> {
-    fn from(vec_2d: Vec2D<f64>) -> Self {
-        Self {
-            x: vec_2d.x.round() as i8,
-            y: vec_2d.y.round() as i8,
-        }
     }
 }

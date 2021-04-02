@@ -1,4 +1,4 @@
-use crate::vec2d::{bezier::*, *};
+use crate::prelude::*;
 
 #[test]
 fn vec2df64_ops() {
@@ -49,11 +49,7 @@ fn vec2df64_ops() {
     ); */
 
     assert_eq!(
-        {
-            let mut p = Vec2D::<f64>::new(2.0, 0.0);
-            p.norm();
-            p
-        },
+        Vec2D::<f64>::new(2.0, 0.0).normal(),
         Vec2D::<f64>::new(1.0, 0.0)
     );
 
