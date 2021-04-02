@@ -1,4 +1,5 @@
 use super::Vec2D;
+use crate::angle::Angle;
 
 macro_rules! trig {
     ($Float: ty) => {
@@ -31,7 +32,7 @@ macro_rules! trig {
                 self.y.atan2(self.x)
             } */
 
-            pub fn from_polar(a: $Float, r: $Float) -> Self {
+            pub fn from_polar(a: Angle, r: $Float) -> Self {
                 Self {
                     x: r * a.cos(),
                     y: r * a.sin(),

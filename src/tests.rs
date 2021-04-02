@@ -36,11 +36,11 @@ fn vec2df64_ops() {
     assert_eq!(p, Vec2D::<f64>::new(3.0, 5.0));
 
     assert_eq!(
-        Vec2D::<f64>::from_polar(0.0, 1.0),
+        Vec2D::<f64>::from_polar(0.0.into(), 1.0),
         Vec2D::<f64>::new(1.0, 0.0)
     );
     assert_eq!(
-        Vec2D::<f64>::from_polar(0.0, 2.0),
+        Vec2D::<f64>::from_polar(0.0.into(), 2.0),
         Vec2D::<f64>::new(2.0, 0.0)
     );
     /* assert_eq!(
